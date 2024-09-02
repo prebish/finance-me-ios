@@ -43,6 +43,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationTitle("Finance Me")
+            .navigationBarTitleDisplayMode(.inline)
+        }
             Text("Select an item")
         }
         .accessibilityAddTraits([.isButton, .isHeader])
