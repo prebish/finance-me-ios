@@ -14,16 +14,15 @@ struct ContentView: View {
         TabView {
             ZStack {
                 Color.mint
-                    .ignoresSafeArea() // Ensure the background covers the entire screen
                 
 //                NavigationView {
                     List {
-                        
                         Text("Item 1")
                         Text("Item 2")
                         Text("Item 3")
                         Text("Item 4")
                     }
+                    
                     .scrollContentBackground(.hidden)
                     .navigationTitle("Items") // Set a title for the navigation bar
 //                }
@@ -33,11 +32,16 @@ struct ContentView: View {
                     Label("Items", systemImage: "list.bullet")
                 }
             
+            
+            
 
             Text("Completed Goals")
                 .tabItem {
                     Label("Completed", systemImage: "checkmark")
                 }
+            
+            Text("My Numbers")
+                .tabItem { Label("Hub", systemImage: "house") }
 
             Text("Finance Section")
                 .tabItem {
