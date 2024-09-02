@@ -43,8 +43,36 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Finance Me")
-            .navigationBarTitleDisplayMode(.inline)
+        }
+        TabView {
+            NavigationView {
+                List {
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                    ToolbarItem {
+                        Button(action: addItem) {
+                            Label("Add Item", systemImage: "plus")
+                        }
+                    }
+                }
+                Text("Select an item")
+            }
+            .tabItem {
+                Label("Items", systemImage: "list.bullet")
+            }
+
+            Text("Finance Section")
+                .tabItem {
+                    Label("Finance", systemImage: "dollarsign.circle")
+                }
+
+            Text("Settings Section")
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
         }
             Text("Select an item")
         }
