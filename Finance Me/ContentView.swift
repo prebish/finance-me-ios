@@ -22,7 +22,6 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
-                // apply mint color
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
@@ -33,26 +32,31 @@ struct ContentView: View {
                         }
                     }
                 }
+                .background(Color.green) // Applies green background to the list area
             }
             .tabItem {
                 Label("Items", systemImage: "list.bullet")
             }
-            
+
             Text("Completed Goals")
                 .tabItem {
                     Label("Completed", systemImage: "checkmark")
                 }
+                .background(Color.green) // Applies green background to this section
 
             Text("Finance Section")
                 .tabItem {
                     Label("Finance", systemImage: "dollarsign.circle")
                 }
+                .background(Color.green) // Applies green background to this section
 
             Text("Settings Section")
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
+                .background(Color.green) // Applies green background to this section
         }
+        .background(Color.green) // Applies green background to the TabView
     }
 
     private func addItem() {
