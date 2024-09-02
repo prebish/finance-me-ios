@@ -16,16 +16,18 @@ struct ContentView: View {
                 Color.mint
                     .ignoresSafeArea() // Ensure the background covers the entire screen
                 
-                NavigationView {
+//                NavigationView {
                     List {
+                        
                         Text("Item 1")
                         Text("Item 2")
                         Text("Item 3")
                         Text("Item 4")
                     }
+                    .scrollContentBackground(.hidden)
                     .navigationTitle("Items") // Set a title for the navigation bar
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure the navigation view takes up all available space
+//                }
+//                .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure the navigation view takes up all available space
             }
                 .tabItem {
                     Label("Items", systemImage: "list.bullet")
