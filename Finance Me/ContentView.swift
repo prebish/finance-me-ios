@@ -10,39 +10,42 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
+        
         TabView {
-            NavigationView {
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                        } label: {
-                            Text(item.timestamp!, formatter: itemFormatter)
+            ZStack(content: {
+                Color.mint
+                
+                VStack {
+                    Color.clear
+                    
+                    NavigationView {
+                        
+                        
+                        
+                        List {
+                            Text("Item 1")
+                            Text("Item 2")
+                            Text("Item 3")
+                            Text("Item 4")
                         }
                     }
-                    .onDelete(perform: deleteItems)
+                    
+                    
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                    }
+                
+                
+                
+                
+            })
+                .tabItem {
+                    Label("Items", systemImage: "list.bullet")
                 }
-                .background(Color.green) // Applies green background to the list area
-            }
-            .tabItem {
-                Label("Items", systemImage: "list.bullet")
-            }
+            
 
             Text("Completed Goals")
                 .tabItem {
                     Label("Completed", systemImage: "checkmark")
                 }
-                .background(Color.green) // Applies green background to this section
 
             Text("Finance Section")
                 .tabItem {
@@ -59,32 +62,6 @@ struct ContentView: View {
         .background(Color.green) // Applies green background to the TabView
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
 
     private let itemFormatter: DateFormatter = {
         let formatter = DateFormatter()
