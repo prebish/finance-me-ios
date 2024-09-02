@@ -10,16 +10,6 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        VStack {
-            Text("Hello, SwiftUI!")
-                .font(.largeTitle)
-                .bold()
-            Button("Getting Started") {
-                
-            }
-        }
-        .accentColor(Color.black)
-        .background(Color.pink)
         TabView {
             NavigationView {
                 List {
@@ -32,7 +22,7 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
-                .background(Color.green) // apply mint color
+                // apply mint color
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
@@ -43,12 +33,15 @@ struct ContentView: View {
                         }
                     }
                 }
-                Text("Select an item")
             }
-            .background(Color.green)
             .tabItem {
                 Label("Items", systemImage: "list.bullet")
             }
+            
+            Text("Completed Goals")
+                .tabItem {
+                    Label("Completed", systemImage: "checkmark")
+                }
 
             Text("Finance Section")
                 .tabItem {
@@ -60,7 +53,6 @@ struct ContentView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
-        .background(Color.green) // apply minty color to body
     }
 
     private func addItem() {
