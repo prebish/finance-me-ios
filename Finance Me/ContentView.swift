@@ -22,6 +22,7 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
+                .background(Color.green) // apply mint color
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         EditButton()
@@ -34,6 +35,7 @@ struct ContentView: View {
                 }
                 Text("Select an item")
             }
+            .background(Color.green)
             .tabItem {
                 Label("Items", systemImage: "list.bullet")
             }
@@ -48,7 +50,7 @@ struct ContentView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
-        .background(Color.mint) // apply minty color to body
+        .background(Color.green) // apply minty color to body
     }
 
     private func addItem() {
