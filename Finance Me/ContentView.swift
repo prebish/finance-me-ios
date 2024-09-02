@@ -13,7 +13,11 @@ struct ContentView: View {
         
         TabView {
             ZStack {
-                Color.mint
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.mint, Color.mint.opacity(0.8)]),
+                    startPoint: .bottom,
+                    endPoint: .top
+                )
                 
 //                NavigationView {
                     List {
