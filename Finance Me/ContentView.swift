@@ -10,6 +10,16 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
+        VStack {
+            Text("Hello, SwiftUI!")
+                .font(.largeTitle)
+                .bold()
+            Button("Getting Started") {
+                
+            }
+        }
+        .accentColor(Color.black)
+        .background(Color.pink)
         TabView {
             NavigationView {
                 List {
@@ -48,7 +58,7 @@ struct ContentView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
-        .background(Color.mint) // apply minty color to body
+        .background(Color.green) // apply minty color to body
     }
 
     private func addItem() {
