@@ -21,7 +21,6 @@ struct ContentView: View {
                 
                 
                 VStack {
-//                    Spacer(minLength: 25)
                     
                     NavigationView { // NavigationView wraps the entire view hierarchy
                         VStack {
