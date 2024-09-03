@@ -90,7 +90,7 @@ struct ContentView: View {
             HubView()
                 .tabItem { Label("Hub", systemImage: "house") }
 
-            Text("Finance Section")
+            FinanceView()
                 .tabItem {
                     Label("Finance", systemImage: "dollarsign.circle")
                 }
