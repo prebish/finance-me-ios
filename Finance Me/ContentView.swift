@@ -14,26 +14,71 @@ struct ContentView: View {
         TabView {
             ZStack {
                 LinearGradient(
-                    gradient: Gradient(colors: [Color.mint, Color.mint.opacity(0.8)]),
-                    startPoint: .bottom,
-                    endPoint: .top
+                    gradient: Gradient(colors: [Color.gray, Color.green.opacity(1)]),
+                    startPoint: .topTrailing,
+                    endPoint: .bottomLeading
                 )
                 
-//                NavigationView {
+                
+            
+                
+                
+                VStack {
+                    Spacer(minLength: 25)
+                    
+                    
+                    
+                    
+                    // Goals Sections
+                    HStack {
+                        // All
+                        Button(action: {
+                            print("Show all")
+                        }) {
+                            Text("All")
+                                .padding()
+                                .background(.green)
+                                .foregroundColor(.black)
+                        }
+                        
+                        // Short Term
+                        Button(action: {
+                            print("Hello World")
+                        }) {
+                            Text("Short Term")
+                                .padding()
+                                .background(.green)
+                                .foregroundColor(.black)
+                        }
+                        
+                        //Long term
+                        Button(action: {
+                            print("Hello World")
+                        }) {
+                            Text("Long Term")
+                                .padding()
+                                .background(.green)
+                                .foregroundColor(.black)
+                        }
+                        
+                    }
+                    
+                    
                     List {
                         Text("Item 1")
                         Text("Item 2")
                         Text("Item 3")
                         Text("Item 4")
                     }
-                    
                     .scrollContentBackground(.hidden)
-                    .navigationTitle("Items") // Set a title for the navigation bar
-//                }
-//                .frame(maxWidth: .infinity, maxHeight: .infinity) // Ensure the navigation view takes up all available space
+                    .navigationTitle("Items")
+                    
+                    
+                }
+                
             }
                 .tabItem {
-                    Label("Items", systemImage: "list.bullet")
+                    Label("Goals", systemImage: "list.bullet")
                 }
             
             
@@ -57,9 +102,8 @@ struct ContentView: View {
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
-                .background(Color.green) // Applies green background to this section
         }
-        .background(Color.green) // Applies green background to the TabView
+        .accentColor(Color.black)
     }
 
 
