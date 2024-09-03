@@ -87,7 +87,7 @@ struct ContentView: View {
                     Label("Completed", systemImage: "checkmark")
                 }
             
-            Text("My Numbers")
+            HubView()
                 .tabItem { Label("Hub", systemImage: "house") }
 
             Text("Finance Section")
