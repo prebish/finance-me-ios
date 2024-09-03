@@ -21,75 +21,69 @@ struct ContentView: View {
                 
                 
                 VStack {
-                    Spacer(minLength: 25)
+//                    Spacer(minLength: 25)
                     
                     NavigationView { // NavigationView wraps the entire view hierarchy
                         VStack {
-                            Text("This is the main content area")
+                            // main content area
+                            
+                            HStack {
+                                // All
+                                Button(action: {
+                                    print("Show all")
+                                }) {
+                                    Text("All")
+                                        .padding()
+                                        .background(.green)
+                                        .foregroundColor(.black)
+                                }.padding()
+                                
+                                // Short Term
+                                Button(action: {
+                                    print("Hello World")
+                                }) {
+                                    Text("Short Term")
+                                        .padding()
+                                        .background(.green)
+                                        .foregroundColor(.black)
+                                }.padding()
+                                
+                                //Long term
+                                Button(action: {
+                                    print("Hello World")
+                                }) {
+                                    Text("Long Term")
+                                        .padding()
+                                        .background(.green)
+                                        .foregroundColor(.black)
+                                }
                                 .padding()
+                                
+                            }
+                            
+                            List {
+                                Text("Item 1")
+                                Text("Item 2")
+                                Text("Item 3")
+                                Text("Item 4")
+                            }
+                            .padding()
+                            .navigationTitle("Items")
+                            
+                            
                         }
-                        .navigationTitle("Home") // This sets the title in the NavigationBar
-                        .navigationBarItems(trailing: Button("Edit") { // you can add HStack for more buttons
-                            print("Edit tapped")
-                        }) // Adds an "Edit" button to the NavigationBar
+                        .navigationBarItems(trailing: HStack {
+                            Button("button", systemImage: "plus") {print("Plus added")}
+                            Button("Edit") {print("Edit tapped")}
+                        })
                     }
-                    
-                    
-                    // Goals Sections
-                    HStack {
-                        // All
-                        Button(action: {
-                            print("Show all")
-                        }) {
-                            Text("All")
-                                .padding()
-                                .background(.green)
-                                .foregroundColor(.black)
-                        }
-                        
-                        // Short Term
-                        Button(action: {
-                            print("Hello World")
-                        }) {
-                            Text("Short Term")
-                                .padding()
-                                .background(.green)
-                                .foregroundColor(.black)
-                        }
-                        
-                        //Long term
-                        Button(action: {
-                            print("Hello World")
-                        }) {
-                            Text("Long Term")
-                                .padding()
-                                .background(.green)
-                                .foregroundColor(.black)
-                        }
-                        
-                    }
-                    
-                    
-                    List {
-                        Text("Item 1")
-                        Text("Item 2")
-                        Text("Item 3")
-                        Text("Item 4")
-                    }
-                    .scrollContentBackground(.hidden)
-                    .navigationTitle("Items")
-                    
-                    
+
                 }
-                
             }
                 .tabItem {
                     Label("Goals", systemImage: "list.bullet")
                 }
-            
-            
-            
-
+          
             Text("Completed Goals")
                 .tabItem {
                     Label("Completed", systemImage: "checkmark")
@@ -109,7 +103,7 @@ struct ContentView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
-        .accentColor(Color.black)
+        .accentColor(Color.mint)
     }
 
 
