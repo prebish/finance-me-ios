@@ -27,12 +27,9 @@ struct ContentView: View {
                         VStack {
                             Text("This is the main content area")
                                 .padding()
-                            NavigationLink(destination: DetailView()) { // Push a new view onto the stack
-                                Text("Go to Details")
-                            }
                         }
                         .navigationTitle("Home") // This sets the title in the NavigationBar
-                        .navigationBarItems(trailing: Button("Edit") {
+                        .navigationBarItems(trailing: Button("Edit") { // you can add HStack for more buttons
                             print("Edit tapped")
                         }) // Adds an "Edit" button to the NavigationBar
                     }
