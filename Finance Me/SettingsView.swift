@@ -1,12 +1,18 @@
+//
+//  SettingsView.swift
+//  Finance Me
+//
+//  Created by Joel Prebish on 9/3/24.
+//
+
 import SwiftUI
-import CoreData
 
 struct SettingsView: View {
-    @State private var notificationsEnabled = true
+    @State private var notificationEnabled = true
     @State private var soundEnabled = true
     @State private var volume: Double = 50
     @State private var darkModeEnabled = false
-
+    
     var body: some View {
         NavigationView {
             Form {
@@ -18,9 +24,9 @@ struct SettingsView: View {
                         Text("Privacy Settings")
                     }
                 }
-
+                
                 Section(header: Text("Notifications")) {
-                    Toggle(isOn: $notificationsEnabled) {
+                    Toggle(isOn: $notificationEnabled) {
                         Text("Enable Notifications")
                     }
                     Toggle(isOn: $soundEnabled) {
@@ -30,27 +36,27 @@ struct SettingsView: View {
                         Text("Volume")
                     }
                 }
-
+                
                 Section(header: Text("Appearance")) {
                     Toggle(isOn: $darkModeEnabled) {
                         Text("Dark Mode")
                     }
                 }
-
+                
                 Section {
                     Button(action: {
-                        print("User logged out")
+                        print("Log out pressed")
                     }) {
-                        Text("Log Out")
-                            .foregroundColor(.red)
+                        Text("Log out").foregroundColor(.red)
                     }
                 }
+                
             }
             .navigationTitle("Settings")
         }
     }
+    
 }
-
 struct AccountDetailsView: View {
     var body: some View {
         Text("Account Details go here")
@@ -60,7 +66,7 @@ struct AccountDetailsView: View {
 
 struct PrivacySettingsView: View {
     var body: some View {
-        Text("Privacy Settings go here")
+        Text("Privacy Details go here")
             .navigationTitle("Privacy Settings")
     }
 }
@@ -68,3 +74,5 @@ struct PrivacySettingsView: View {
 #Preview {
     SettingsView()
 }
+
+
