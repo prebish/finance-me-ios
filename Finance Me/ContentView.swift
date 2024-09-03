@@ -21,7 +21,6 @@ struct ContentView: View {
                 
                 
                 VStack {
-                    
                     NavigationView { // NavigationView wraps the entire view hierarchy
                         VStack {
                             // main content area
@@ -97,7 +96,7 @@ struct ContentView: View {
                 }
                 .background(Color.green) // Applies green background to this section
 
-            Text("Settings Section")
+            SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gearshape")
                 }
